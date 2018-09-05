@@ -3,6 +3,7 @@ import { join } from "path";
 import { GitgraphCore } from "../gitgraph";
 import { Template } from "../template";
 
+// TODO: fix Joi
 describe("Gitgraph.import", () => {
   describe("on invalid input", () => {
     it("should throw if input is not an array", () => {

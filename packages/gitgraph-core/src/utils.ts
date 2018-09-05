@@ -1,4 +1,5 @@
 import { Commit } from "./commit";
+// TODO: fix circular dependency [utils -> gitgraph -> template -> utils]
 import { Coordinate, GitgraphCore, OrientationsEnum } from "./gitgraph";
 
 /**
