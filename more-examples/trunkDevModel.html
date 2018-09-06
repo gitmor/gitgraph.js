@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trunk Development Model</title>
+  <link rel="stylesheet" type="text/css" href="../src/gitgraph.css" />
+
+     <style type="text/css" media="print">
+    @page
+    {
+        size:  auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }`
+    `</style>
+</head>
+
+<h1 align="center">Trunk Development model</h1>
+<body>
+  <canvas id="gitGraph"></canvas>
+  <div id="detail" class="gitgraph-detail">Test.</div>
+  <script src="../src/gitgraph.js"></script>
+  <script src="trunkDevModel.js"></script>
+
+  <p style="page-break-before: always">
+
+<h2> Pros</h2>
+
+<ul>
+  <li>Everything works off of master.</li>
+  <li>Used by very large software development firms in social media space (eg google, facebook etc).</li>
+
+  <li>origin/master would be the main branch where the source code of HEAD always reflects a production-ready state.</li>
+  <li>origin/master would also reflect a state with latest delivered development changes for next release.</li>
+  <li>Frequent merges to master.</li>
+  <li>Well suited for CI/CD and automation of various elements in the build, test, deploy toolchain</li>
+  <li>Less stress during release time since almost everyday is release day! :)</li>
+</ul>
+
+<h2> Cons</h2>
+
+<ul>
+  <li>Frequent merges to master.</li>
+  <li>Requires hyperfocus by entire team to solve problems immediately as they arise.</li>
+  <li>Requires high levels of confidence in the implementation of static analysis, dynamic analysis, code review, CI/CD and automation processes throughout the software design&development process.</li>
+  <li>Usually requires large software development and support team to stop team from getting blocked on an issue.</li>
+  <li>Products must have a very large customer base so that even a small problem would affect a large enough segment of users and the problem would become visible immediately to be reproduced, tested and addressed fast. (eg even if gmail fails for a small number of users, it becomes immediately visible through social media, so either the problem is solved or changes rolled back immediately before more damage is done to the codebase). This approach assumes "latent unidentified bugs" to be minimal in the products. Also assumes very little technical debt.</li>
+  <li>Products should also be extensively used by developers and internal users in the firms to raise defects asap.</li> 
+</ul>
+
+<p></p>
+
+<button onclick="myFunction()">Print</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+
+<br>
+<br>
+<br>
+
+</html>
+</body>
+
+</html>

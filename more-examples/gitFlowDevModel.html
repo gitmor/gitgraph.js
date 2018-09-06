@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Git Flow Model</title>
+  <link rel="stylesheet" type="text/css" href="../src/gitgraph.css" />
+     <style type="text/css" media="print">
+    @page
+    {
+        size:  auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }`
+    `</style>
+</head>
+
+<h1 align="center">Gitflow model</h1>
+
+<body>
+  <canvas id="gitGraph"></canvas>
+  <div id="detail" class="gitgraph-detail">Test.</div>
+  <script src="../src/gitgraph.js"></script>
+  <script src="gitFlowDevModel.js"></script>
+</body>
+
+  <p style="page-break-before: always">
+
+<h2> Notes</h2>
+
+<ul>
+    <li>Feature branches branch off of 
+        <b><i>develop</i></b> 
+        & merge back into 
+        <b><i>develop</i></b> 
+    </li>
+    <li>Release branches branch off of 
+        <b><i>develop</i></b> 
+        & merge back into 
+        <b><i>develop</i></b> and 
+        <b><i>master</i></b> 
+    </li>
+    <li>Hotfix branches off of 
+        <b><i>master</i></b> 
+        & after critical bug fixes merge back into 
+        <b><i>develop</i></b> and 
+        <b><i>master</i></b> 
+    </li>
+</ul>
+
+<h2> Pros</h2>
+
+<ul>
+  <li>Git flow model used by open source projects and other firms.</li>
+  <li>Has been trending well last few years.</li>
+  <li>origin/master would be the main branch where the source code of HEAD always reflects a production-ready state.</li>
+  <li>origin/develop would be the main branch where source code of HEAD always reflects a state with latest delivered development changes for next release. aka “integration branch” or "nightly build branch"</li>
+</ul>
+
+<h2> Cons</h2>
+
+<ul>
+  <li>Requires more effort since it involves maintaining more branches and merges may not be smooth.</li>
+  <li>Might be overkill if code base does not change often or less available resources.</li>
+  <li>Might be problematic if release cycles are long and same mature code base is changed/refactored extensively between releases along with personnel turnover.</li>
+</ul>
+
+<p></p>
+
+<button onclick="myFunction()">Print</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+
+<br>
+<br>
+<br>
+
+</html>

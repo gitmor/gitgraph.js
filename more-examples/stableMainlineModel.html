@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stable Mainline Model </title>
+  <link rel="stylesheet" type="text/css" href="../src/gitgraph.css" />
+     <style type="text/css" media="print">
+    @page
+    {
+        size:  auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }`
+    `</style>
+</head>
+
+<h1 align="center">Stable Mainline model </h1>
+
+<body>
+  <canvas id="gitGraph"></canvas>
+  <div id="detail" class="gitgraph-detail">Test.</div>
+  <script src="../src/gitgraph.js"></script>
+  <script src="stableMainlineModel.js"></script>
+</body>
+
+  <p style="page-break-before: always">
+
+<h2> Notes</h2>
+
+<ul>
+    <li>Feature branches branch off of 
+        <b><i>master</i></b> 
+        & merge back into 
+        <b><i>master</i></b> 
+    </li>
+    <li>Release branches fork/branch off of 
+        <b><i>master</i></b> 
+        & never merge back into 
+        <b><i>master</i></b> 
+    </li>
+    <li>The intent of Release branches is to freeze code & fallback point if hotfixes required
+        without including all the changes that happened in master since it was released. 
+    </li>
+    <li>The bugs are usually fixed im master branch and cherry pick fixes to release branch as needed .  
+        For complex & high risk bugs, fix done in release branch & an issue created to fix it properly 
+        on master at a later date.
+    </li>
+    <li>Patch releases are created from release branches.
+    </li>
+</ul>
+
+<h2> Pros</h2>
+
+<ul>
+  <li>There is only one eternal, canonical branch: master.</li>
+  <li>Stable Mainline Model used by many firms.</li>
+</ul>
+
+<h2> Cons</h2>
+
+<ul>
+  <li>Might be problematic if long lived feature branches.</li>
+  <li>All branches should periodically rebase with master to be up-to-date with developments in master branch.</li>
+  <li>Might be problematic to merge if release cycles are long, not periodically rebased with master and same mature code base is changed/refactored extensively between releases along with personnel turnover.</li>
+</ul>
+
+<p></p>
+
+<button onclick="myFunction()">Print</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+
+<br>
+<br>
+<br>
+
+</html>
